@@ -29,15 +29,21 @@ def get_images():
 def main():
   get_images()
   cat = Cat(-90,random.randint(50, height-50)), cat_images)
-
+  player = Player((width//2, height//2), )
+  while True:
+    clock.ticks(60)
+    for event in pygame.event.get():
+      if event.type == "QUIT":
+        sys.exit()
+    keys = pygame.key.get_pressed()
+    if K_UP in keys:
+      player.up()
+    if K_DOWN in keys:
+      player.down()
+    if K_LEFT in keys:
+      player.left()
+    if K_RIGHT in keys:
+      player.right()
 
 if __name__ == "__main()__":
   main()
-
-
-
-
-
-  
-
-
